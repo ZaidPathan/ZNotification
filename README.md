@@ -20,7 +20,7 @@ Easy to use:
 		ZNotification.show_Standard_Alert("No Internet available!", toView: self.view)
 		//In toView write you ViewController's main view.
 		
-![StandardAlert](https://www.dropbox.com/s/159ek0btnot0hgq/iOS%20Simulator%20Screen%20Shot%2022-Jun-2015%202.11.16%20pm.png?dl=0)
+![StandardAlert](https://raw.githubusercontent.com/ZaidPathan/ZNotification/master/Docs/Screenshots/iOS%20Simulator%20Screen%20Shot%2022-Jun-2015%202.11.16%20pm.png)
 		
 		
 <b>3. Show Custom alert:</b>
@@ -37,8 +37,8 @@ Easy to use:
 		ZNotification.show_Custom_Alert(message!, bgColor: bgColor, textColor: textColor, font: font, comeTime:	animationComeTime, goTime: animationGoTime, holdTime: animationHoldTime, toView: self.view)
 		//In toView write you ViewController's main view.
 		
-![CustomAlert1](https://www.dropbox.com/s/ss5fmdyz2jyrsl8/iOS%20Simulator%20Screen%20Shot%2022-Jun-2015%202.11.18%20pm.png?dl=0)
+![CustomAlert1](https://raw.githubusercontent.com/ZaidPathan/ZNotification/master/Docs/Screenshots/iOS%20Simulator%20Screen%20Shot%2022-Jun-2015%202.18.15%20pm.png)
 
-![CustomAlert2](https://www.dropbox.com/s/mshqwcdwe547mhq/iOS%20Simulator%20Screen%20Shot%2022-Jun-2015%202.18.15%20pm.png?dl=0)
+![CustomAlert2](https://raw.githubusercontent.com/ZaidPathan/ZNotification/master/Docs/Screenshots/iOS%20Simulator%20Screen%20Shot%2022-Jun-2015%202.11.18%20pm.png)
 
-![CustomAlert3](https://www.dropbox.com/s/fcpvxb8h5cdtmjf/iOS%20Simulator%20Screen%20Shot%2022-Jun-2015%202.20.13%20pm.png?dl=0)
+![CustomAlert3](https://raw.githubusercontent.com/ZaidPathan/ZNotification/master/Docs/Screenshots/iOS%20Simulator%20Screen%20Shot%2022-Jun-2015%202.20.13%20pm.png)
