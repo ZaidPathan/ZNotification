@@ -15,7 +15,7 @@ Easy to use:
 <b>1. Add ZNotification.swift file into you project</b><br>
 -Then use these both methods according to your requirements.
 
-<b>2. Show Standard alert (Brabble app like):</b>
+<b>2. Show Standard alert (Many social apps like):</b>
 
 		ZNotification.show_Standard_Alert("No Internet available!", toView: self.view)
 		//In toView write you ViewController's main view.
