@@ -12,13 +12,13 @@ ZNotification is inspired by many social apps.<br>
 
 Easy to use:
 
-<b>1. Add ZNotification.swift file into you project</b><br>
+<b>1. Add ZNotification.swift file into your project</b><br>
 -Then use these both methods according to your requirements.
 
 <b>2. Show Standard alert (Many social apps like):</b>
 
 		ZNotification.show_Standard_Alert("No Internet available!", toView: self.view)
-		//In toView write you ViewController's main view.
+		//In toView write your ViewController's main view.
 		
 ![StandardAlert](https://raw.githubusercontent.com/ZaidPathan/ZNotification/master/Docs/Screenshots/iOS%20Simulator%20Screen%20Shot%2023-Jun-2015%2010.25.38%20am.png)
 		
@@ -35,7 +35,7 @@ Easy to use:
 		var animationHoldTime:NSTimeInterval = 1.0
 		
 		ZNotification.show_Custom_Alert(message!, bgColor: bgColor, textColor: textColor, font: font, comeTime:	animationComeTime, goTime: animationGoTime, holdTime: animationHoldTime, toView: self.view)
-		//In toView write you ViewController's main view.
+		//In toView write your ViewController's main view.
 		
 
 
