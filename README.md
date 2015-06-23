@@ -3,7 +3,7 @@ Device support: iPhone,iPod and iPads<br>
 Orientation support: Both (Landscape portrait)
 
 
-ZNotification is inspired by one of the famous social app Brabble.<br>
+ZNotification is inspired by many social apps.<br>
 -You should use this components if you want to show notification inside you app.<br>
 -For example: show no internet connection alert, wrong username-password alert etc.<br>
 -This component is very easy to use and free.<br>
@@ -20,7 +20,7 @@ Easy to use:
 		ZNotification.show_Standard_Alert("No Internet available!", toView: self.view)
 		//In toView write you ViewController's main view.
 		
-![StandardAlert](https://raw.githubusercontent.com/ZaidPathan/ZNotification/master/Docs/Screenshots/iOS%20Simulator%20Screen%20Shot%2022-Jun-2015%202.11.16%20pm.png)
+![StandardAlert](https://raw.githubusercontent.com/ZaidPathan/ZNotification/master/Docs/Screenshots/iOS%20Simulator%20Screen%20Shot%2023-Jun-2015%2010.25.38%20am.png)
 		
 		
 <b>3. Show Custom alert:</b>
@@ -37,8 +37,8 @@ Easy to use:
 		ZNotification.show_Custom_Alert(message!, bgColor: bgColor, textColor: textColor, font: font, comeTime:	animationComeTime, goTime: animationGoTime, holdTime: animationHoldTime, toView: self.view)
 		//In toView write you ViewController's main view.
 		
-![CustomAlert1](https://raw.githubusercontent.com/ZaidPathan/ZNotification/master/Docs/Screenshots/iOS%20Simulator%20Screen%20Shot%2022-Jun-2015%202.18.15%20pm.png)
 
-![CustomAlert2](https://raw.githubusercontent.com/ZaidPathan/ZNotification/master/Docs/Screenshots/iOS%20Simulator%20Screen%20Shot%2022-Jun-2015%202.11.18%20pm.png)
 
-![CustomAlert3](https://raw.githubusercontent.com/ZaidPathan/ZNotification/master/Docs/Screenshots/iOS%20Simulator%20Screen%20Shot%2022-Jun-2015%202.20.13%20pm.png)
+![CustomAlert1](https://raw.githubusercontent.com/ZaidPathan/ZNotification/master/Docs/Screenshots/iOS%20Simulator%20Screen%20Shot%2023-Jun-2015%2010.26.16%20am.png)
+
+![CustomAlert2](https://raw.githubusercontent.com/ZaidPathan/ZNotification/master/Docs/Screenshots/iOS%20Simulator%20Screen%20Shot%2023-Jun-2015%2010.32.19%20am.png)
