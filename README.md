@@ -39,6 +39,4 @@ Easy to use:
 		
 
 
-![CustomAlert1](https://raw.githubusercontent.com/ZaidPathan/ZNotification/master/Docs/Screenshots/iOS%20Simulator%20Screen%20Shot%2023-Jun-2015%2010.26.16%20am.png)
-
-![CustomAlert2](https://raw.githubusercontent.com/ZaidPathan/ZNotification/master/Docs/Screenshots/iOS%20Simulator%20Screen%20Shot%2023-Jun-2015%2010.32.19%20am.png)
+![CustomAlert](https://raw.githubusercontent.com/ZaidPathan/ZNotification/master/Docs/Screenshots/iOS%20Simulator%20Screen%20Shot%2023-Jun-2015%2010.32.19%20am.png)
