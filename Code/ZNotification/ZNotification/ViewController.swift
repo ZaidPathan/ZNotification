@@ -28,22 +28,22 @@ class ViewController: UIViewController {
 	}
 	
 	
-	@IBAction func IBActionShowStandardAlert(sender: UIButton) {
+	@IBAction func IBActionShowStandardAlert(_ sender: UIButton) {
 		ZNotification.show_Standard_Alert("No Internet available!", toView: self.view)
 	}
 	
 
-	@IBAction func IBActionShowCustomAlert(sender: UIButton) {
+	@IBAction func IBActionShowCustomAlert(_ sender: UIButton) {
 		
 		var message:String? = "LoggedIn successfylly"
-		var bgColor:UIColor = UIColor.greenColor().colorWithAlphaComponent(0.75)
-		var textColor:UIColor = UIColor.whiteColor()
+		var bgColor:UIColor = UIColor.green.withAlphaComponent(0.75)
+		var textColor:UIColor = UIColor.white
 		var font:UIFont = UIFont(name: "Papyrus",
 			size: 15.0)!
 		
-		var animationComeTime:NSTimeInterval = 0.5
-		var animationGoTime:NSTimeInterval = 0.5
-		var animationHoldTime:NSTimeInterval = 1.0
+		var animationComeTime:TimeInterval = 0.5
+		var animationGoTime:TimeInterval = 0.5
+		var animationHoldTime:TimeInterval = 1.0
 		
 		ZNotification.show_Custom_Alert(message!, bgColor: bgColor, textColor: textColor, font: font, comeTime:	animationComeTime, goTime: animationGoTime, holdTime: animationHoldTime, toView: self.view)
 	}
@@ -51,8 +51,8 @@ class ViewController: UIViewController {
 	
 	
 	func configureView(){
-		self.IBbtnCustomAlert.layer.borderColor = UIColor.whiteColor().CGColor
-		self.IBbtnStandartAlert.layer.borderColor = UIColor.whiteColor().CGColor
+		self.IBbtnCustomAlert.layer.borderColor = UIColor.white.cgColor
+		self.IBbtnStandartAlert.layer.borderColor = UIColor.white.cgColor
 		self.IBbtnCustomAlert.layer.borderWidth = 1.0
 		self.IBbtnStandartAlert.layer.borderWidth = 1.0
 	}

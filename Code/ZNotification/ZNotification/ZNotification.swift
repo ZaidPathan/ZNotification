@@ -9,25 +9,25 @@
 import Foundation
 import UIKit
 
-let DEVICE_WIDTH:CGFloat = UIScreen.mainScreen().bounds.size.width
-let DEVICE_HEIGHT:CGFloat = UIScreen.mainScreen().bounds.size.height
+let DEVICE_WIDTH:CGFloat = UIScreen.main.bounds.size.width
+let DEVICE_HEIGHT:CGFloat = UIScreen.main.bounds.size.height
 
 class ZNotification {
 	
-	class func show_Standard_Alert(message:String,toView:UIView){
-		show_Custom_Alert(message, bgColor: UIColor.blackColor().colorWithAlphaComponent(0.7), textColor: UIColor.whiteColor(), font: UIFont(name: "HelveticaNeue-UltraLight",
+	class func show_Standard_Alert(_ message:String,toView:UIView){
+		show_Custom_Alert(message, bgColor: UIColor.black.withAlphaComponent(0.7), textColor: UIColor.white, font: UIFont(name: "HelveticaNeue-UltraLight",
 			size: 15.0)!, comeTime: 0.5, goTime: 0.5, holdTime: 1, toView: toView)
 	}
 	
 	
-	class func show_Custom_Alert(message:String,bgColor:UIColor,textColor:UIColor,font:UIFont,comeTime:NSTimeInterval,goTime:NSTimeInterval,holdTime:NSTimeInterval,toView:UIView){
+	class func show_Custom_Alert(_ message:String,bgColor:UIColor,textColor:UIColor,font:UIFont,comeTime:TimeInterval,goTime:TimeInterval,holdTime:TimeInterval,toView:UIView){
 		
-		var alertLabel:UILabel = UILabel()
+		let alertLabel:UILabel = UILabel()
 		alertLabel.text = message
 		alertLabel.backgroundColor = bgColor
 		alertLabel.textColor = textColor
 		alertLabel.font = font
-		alertLabel.textAlignment = NSTextAlignment.Center
+		alertLabel.textAlignment = NSTextAlignment.center
 		alertLabel.numberOfLines = 0
 		alertLabel.minimumScaleFactor = 0.5
 		toView.addSubview(alertLabel)
@@ -35,16 +35,16 @@ class ZNotification {
 		
 		//---------------------------------Start AutoLayout------------------------------------------
 		
-		alertLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+		alertLabel.translatesAutoresizingMaskIntoConstraints = false
 		
-		var metricsDictionary = [:]
+        var metricsDictionary:[AnyHashable:Any] = [:]
 		let viewsDictionary = ["alertLabel":alertLabel]
 		
 		
 		//---------------------------------Pin left-right---------------------------------------------
 		
-		let view_constraint_H:NSArray = NSLayoutConstraint.constraintsWithVisualFormat("H:|-(0)-[alertLabel]-(0)-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
-		toView.addConstraints(view_constraint_H as [AnyObject])
+		let view_constraint_H:NSArray = NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[alertLabel]-(0)-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary) as NSArray
+		toView.addConstraints(view_constraint_H as [AnyObject] as [AnyObject] as! [NSLayoutConstraint])
 		toView.layoutIfNeeded()
 		
 		if(alertLabel.bounds.size.height < 30){
@@ -57,7 +57,7 @@ class ZNotification {
 		
 		//-------------------------------Set Initial height-------------------------------------------
 		
-		let view1_constraint_V:Array = NSLayoutConstraint.constraintsWithVisualFormat("V:[alertLabel(labelNewHeight)]", options: NSLayoutFormatOptions(0), metrics: metricsDictionary as [NSObject : AnyObject], views: viewsDictionary)
+		let view1_constraint_V:Array = NSLayoutConstraint.constraints(withVisualFormat: "V:[alertLabel(labelNewHeight)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: metricsDictionary as? [String: Any], views: viewsDictionary)
 		
 		toView.addConstraints(view1_constraint_V)
 		
@@ -70,38 +70,38 @@ class ZNotification {
 		
 		metricsDictionary = ["topConstraint":-alertLabel.bounds.size.height]
 		
-		let view_constraint_V:Array = NSLayoutConstraint.constraintsWithVisualFormat("V:|-(topConstraint)-[alertLabel]", options: NSLayoutFormatOptions(0), metrics: metricsDictionary as [NSObject : AnyObject], views: viewsDictionary)
-		toView.addConstraints(view_constraint_V as [AnyObject])
+		let view_constraint_V:Array = NSLayoutConstraint.constraints(withVisualFormat: "V:|-(topConstraint)-[alertLabel]", options: NSLayoutFormatOptions(rawValue: 0), metrics: metricsDictionary as? [String: Any], views: viewsDictionary)
+		toView.addConstraints(view_constraint_V as [AnyObject] as! [NSLayoutConstraint])
 		toView.layoutIfNeeded()
 		toView.removeConstraints(view_constraint_V)
 		
 		metricsDictionary = ["topConstraint":alertLabel.bounds.size.height]
-		let view_constraint_V_come:Array = NSLayoutConstraint.constraintsWithVisualFormat("V:|-(0)-[alertLabel]", options: NSLayoutFormatOptions(0), metrics: metricsDictionary as [NSObject : AnyObject], views: viewsDictionary)
-		toView.addConstraints(view_constraint_V_come as [AnyObject])
+		let view_constraint_V_come:Array = NSLayoutConstraint.constraints(withVisualFormat: "V:|-(0)-[alertLabel]", options: NSLayoutFormatOptions(rawValue: 0), metrics: metricsDictionary as? [String: Any], views: viewsDictionary)
+		toView.addConstraints(view_constraint_V_come as [AnyObject] as! [NSLayoutConstraint])
 		
 		
 		//-------------------------Animate Label to show notification--------------------------------------
 		
-		UIView.animateWithDuration(comeTime, animations: { () -> Void in
+		UIView.animate(withDuration: comeTime, animations: { () -> Void in
 			toView.layoutIfNeeded()
 			
-			}) { (value:Bool) -> Void in
+			}, completion: { (value:Bool) -> Void in
 				
 				toView.removeConstraints(view_constraint_V_come)
 				
 				metricsDictionary = ["topConstraint":-alertLabel.bounds.size.height]
-				let view_constraint_V_back:Array = NSLayoutConstraint.constraintsWithVisualFormat("V:|-(topConstraint)-[alertLabel]", options: NSLayoutFormatOptions(0), metrics: metricsDictionary as [NSObject : AnyObject], views: viewsDictionary)
-				toView.addConstraints(view_constraint_V_back as [AnyObject])
+				let view_constraint_V_back:Array = NSLayoutConstraint.constraints(withVisualFormat: "V:|-(topConstraint)-[alertLabel]", options: NSLayoutFormatOptions(rawValue: 0), metrics: metricsDictionary as? [String: Any], views: viewsDictionary)
+				toView.addConstraints(view_constraint_V_back as [AnyObject] as! [NSLayoutConstraint])
 				
 				
 				//-------------------------Animate Label back from notification--------------------------------------
 				
-				UIView.animateWithDuration(goTime, delay: holdTime, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+				UIView.animate(withDuration: goTime, delay: holdTime, options: UIViewAnimationOptions.curveEaseIn, animations: { () -> Void in
 					toView.layoutIfNeeded()
 					}) { (value:Bool) -> Void in
 						alertLabel.removeFromSuperview()
 				}
-		}
+		}) 
 		
 		
 		
