@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D1B074BFD7428B255DBFF4B5A67CE208B6A88391",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "84AEFC7EE1DBA4134E7C025D125C0F065B935F2F" : 9223372036854775807,
+    "D1B074BFD7428B255DBFF4B5A67CE208B6A88391" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7ADCAF12-29E1-4621-98A8-69F9F4FEAEAB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "84AEFC7EE1DBA4134E7C025D125C0F065B935F2F" : "",
+    "D1B074BFD7428B255DBFF4B5A67CE208B6A88391" : "ZNotification\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ZNotification",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Code\/ZNotification\/ZNotification.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ninjaprox\/NVActivityIndicatorView.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "84AEFC7EE1DBA4134E7C025D125C0F065B935F2F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ZaidPathan\/ZNotification",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D1B074BFD7428B255DBFF4B5A67CE208B6A88391"
+    }
+  ]
+}
