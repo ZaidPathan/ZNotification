@@ -1,5 +1,4 @@
-language: objective-c  #1
+language: objective-c
 osx_image: xcode8.2 #2
-xcode_project: ZNotification.xcodeproj #3
-xcode_scheme: ZNotification #4
-xcode_sdk: iphonesimulator9.0 #5
+xcode_project: ZNotification.xcodeproj # path to your xcodeproj folder
+xcode_scheme: ZNotification
