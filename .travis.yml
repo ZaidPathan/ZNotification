@@ -1,4 +1,4 @@
 language: objective-c
 xcode_project: ZNotification.xcodeproj # path to your xcodeproj folder
 xcode_scheme: ZNotification
-script: xcodebuild -workspace ZNotification.xcodeproj -scheme ZNotification -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+script: xcodebuild -project ZNotification.xcodeproj -scheme ZNotification -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
