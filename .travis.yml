@@ -5,7 +5,7 @@ osx_image: xcode8.2
 
 script:
 - 'if [ "$TRAVIS_BRANCH" == "develop" ]; then
-    xcodebuild -project ZNotification.xcodeproj -scheme ZNotification -sdk iphonesimulator10.2 -destination OS=9.0 -configuration ReleaseCandidate ONLY_ACTIVE_ARCH=NO;
+    - xcodebuild clean build -project ZNotification.xcodeproj -scheme ZNotification -sdk iphonesimulator10.2 -destination "platform=iOS Simulator,name=iPhone 6" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -configuration ReleaseCandidate ONLY_ACTIVE_ARCH=NO;
 else
-    xcodebuild -project ZNotification.xcodeproj -scheme ZNotification -sdk iphonesimulator10.2 -destination platform=iOS,name=iPhone7 -configuration FeatureCandidate ONLY_ACTIVE_ARCH=NO;
+    - xcodebuild clean build -project ZNotification.xcodeproj -scheme ZNotification -sdk iphonesimulator10.2 -destination "platform=iOS Simulator,name=iPhone 6" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -configuration FeatureCandidate ONLY_ACTIVE_ARCH=NO;
 fi'
