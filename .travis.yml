@@ -3,9 +3,14 @@ xcode_project: ZNotification.xcodeproj # path to your xcodeproj folder
 xcode_scheme: ZNotification
 osx_image: xcode8.2
 
+before_script:
+- config=FeatureCandidate
+
 script:
 - 'if [ "$TRAVIS_BRANCH" == "develop" ]; then
-    xcodebuild clean build -project ZNotification.xcodeproj -scheme ZNotification -sdk iphonesimulator10.2 -destination "platform=iOS Simulator" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -configuration ReleaseCandidate ONLY_ACTIVE_ARCH=NO;
+    config=ReleaseCandidate
 else
-    xcodebuild clean build -project ZNotification.xcodeproj -scheme ZNotification -sdk iphonesimulator10.2  CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -configuration FeatureCandidate ONLY_ACTIVE_ARCH=NO;
+
 fi'
+
+xcodebuild clean build -project ZNotification.xcodeproj -scheme ZNotification -sdk iphonesimulator10.2  CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -configuration ${config} ONLY_ACTIVE_ARCH=NO;
