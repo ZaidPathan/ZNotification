@@ -5,7 +5,7 @@ xcode_scheme: ZNotification
 
 script:
 - 'if [ "$TRAVIS_BRANCH" == "develop" ]; then
-    xcodebuild -project ZNotification.xcodeproj -scheme ZNotification -sdk "iphonesimulator10.0" -destination "OS=9.0,name=iPhone 6" -configuration ReleaseCandidate ONLY_ACTIVE_ARCH=NO;
+    xcodebuild -project ZNotification.xcodeproj -scheme ZNotification -sdk iphonesimulator10.0 -destination OS=9.0 -configuration ReleaseCandidate ONLY_ACTIVE_ARCH=NO;
 else
-    xcodebuild -project ZNotification.xcodeproj -scheme ZNotification -sdk "iphonesimulator10.0" -destination "OS=9.0,name=iPhone 6" -configuration FeatureCandidate ONLY_ACTIVE_ARCH=NO;
+    xcodebuild -project ZNotification.xcodeproj -scheme ZNotification -sdk iphonesimulator10.0 -destination OS=9.0 -configuration FeatureCandidate ONLY_ACTIVE_ARCH=NO;
 fi'
