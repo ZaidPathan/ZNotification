@@ -7,5 +7,5 @@ script:
 - 'if [ "$TRAVIS_BRANCH" == "develop" ]; then
     xcodebuild clean build -project ZNotification.xcodeproj -scheme ZNotification -sdk iphonesimulator10.2 -destination "platform=iOS Simulator" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -configuration ReleaseCandidate ONLY_ACTIVE_ARCH=NO;
 else
-    xcodebuild clean build -project ZNotification.xcodeproj -scheme ZNotification -sdk iphonesimulator10.2 -destination "platform=iOS Simulator" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -configuration FeatureCandidate ONLY_ACTIVE_ARCH=NO;
+    xcodebuild clean build -project ZNotification.xcodeproj -scheme ZNotification -sdk iphonesimulator10.2  CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -configuration FeatureCandidate ONLY_ACTIVE_ARCH=NO;
 fi'
