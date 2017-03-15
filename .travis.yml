@@ -1,12 +1,11 @@
 language: objective-c
 xcode_project: ZNotification.xcodeproj # path to your xcodeproj folder
 xcode_scheme: ZNotification
-
+osx_image: xcode8.2
 
 script:
 - 'if [ "$TRAVIS_BRANCH" == "develop" ]; then
-    xcodebuild -project ZNotification.xcodeproj -scheme ZNotification -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6S,OS=9.1' -configuration ReleaseCandidate ONLY_ACTIVE_ARCH=NO;
-
+    xcodebuild -project ZNotification.xcodeproj -scheme ZNotification -sdk iphonesimulator10.2 -destination OS=9.0 -configuration ReleaseCandidate ONLY_ACTIVE_ARCH=NO;
 else
-    xcodebuild -project ZNotification.xcodeproj -scheme ZNotification -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6S,OS=9.1' -configuration FeatureCandidate ONLY_ACTIVE_ARCH=NO;
+    xcodebuild -project ZNotification.xcodeproj -scheme ZNotification -sdk iphonesimulator10.2 -destination OS=9.0 -configuration FeatureCandidate ONLY_ACTIVE_ARCH=NO;
 fi'
