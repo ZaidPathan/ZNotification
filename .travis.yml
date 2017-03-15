@@ -7,5 +7,5 @@ script:
 - 'if [ "$TRAVIS_BRANCH" == "develop" ]; then
     xcodebuild -project ZNotification.xcodeproj -scheme ZNotification -sdk iphonesimulator10.2 -destination OS=9.0 -configuration ReleaseCandidate ONLY_ACTIVE_ARCH=NO;
 else
-    xcodebuild -project ZNotification.xcodeproj -scheme ZNotification -sdk iphonesimulator10.2 -destination platform:iOS Simulator, id:22FA2149-1241-469C-BF6D-462D3837DB72, OS:10.2, name:iPhone 7 -configuration FeatureCandidate ONLY_ACTIVE_ARCH=NO;
+    xcodebuild -project ZNotification.xcodeproj -scheme ZNotification -sdk iphonesimulator10.2 -destination platform=iOS,name=iPhone 7 -configuration FeatureCandidate ONLY_ACTIVE_ARCH=NO;
 fi'
