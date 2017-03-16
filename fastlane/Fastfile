@@ -1,0 +1,104 @@
+# https://docs.fastlane.tools
+fastlane_version "1.109.0"
+
+generated_fastfile_id "a6e313e6-badf-4981-b231-6d46eb1b2ff9"
+
+default_platform :ios
+
+# ——————————————————build———————————————————————
+private_lane :build do |options|
+  # --- Section: Cleanup
+  ensure_git_status_clean
+  sh("rm -rf ../Carthage/")
+  sh("rm -f ../*.ipa")
+  sh("rm -rf ../*.app.dSYM.zip")
+  clean_build_artifacts
+
+  # --- Section: Set names
+  badge(shield: options[:shield],
+        no_badge: true,
+        shield_gravity: "Center",
+        path: "./ZNotification/Assets.xcassets"
+        )
+  update_info_plist(scheme:”ZNotification”,
+                    display_name: options[:appname]
+                    )
+
+  # --- Section: Build
+  carthage(command: "bootstrap", platform: "iOS")
+end
+# ——————————————————build———————————————————————
+
+
+
+# ——————————————————feature_candidate———————————————————————
+lane :feature_candidate do
+ 
+#___
+feature = git_branch
+  commits_on_branch = sh("git rev-list --count HEAD ^develop").rstrip
+  tag = "#{feature}-FC-#{commits_on_branch}"
+  shield = "Build-FC_#{commits_on_branch}-3B2371"
+  filename = "#{tag}.ipa"
+  appname = "#{feature}"
+  build(configuration: "FeatureCandidate",
+        ipa: filename,
+        shield: shield,
+        appname: appname,
+        tag: tag
+        )
+#___
+
+ # build your iOS app
+  gym(project: "ZNotification.xcodeproj",
+      scheme: "ZNotification",
+      configuration: options[:configuration],
+      export_method: "ad-hoc",
+      clean: false,
+      output_name: options[:ipa]
+      )
+
+  # upload to Testflight
+  pilot(skip_waiting_for_build_processing: true)
+
+  slack(
+    # slack_url: "https://hooks.slack.com/services/IDS"
+  )
+end
+# ——————————————————feature_candidate———————————————————————
+
+
+
+# ——————————————————release_candidate———————————————————————
+lane :release_candidate do
+  # build your iOS app
+  gym(
+    # scheme: "YourScheme"
+  )
+
+#___
+commits_on_branch = sh("git rev-list --count HEAD ^develop").rstrip
+  version = get_version_number(xcodeproj: "ZNotification.xcodeproj",
+                               target: "ZNotification").rstrip
+  tag = "#{version}-RC-#{commits_on_branch}"
+  shield = "#{version}-RC_#{commits_on_branch}-3B2371"
+  filename = "Klap-#{tag}.ipa"
+  appname = "#{version} RC #{commits_on_branch}"
+
+  build(configuration: "ReleaseCandidate",
+        ipa: filename,
+        shield: shield,
+        appname: appname,
+        tag: tag
+        )
+#___
+
+
+  # upload to Testflight
+  pilot(skip_waiting_for_build_processing: true)
+
+  slack(
+    # slack_url: "https://hooks.slack.com/services/IDS"
+  )
+end
+# ——————————————————release_candidate———————————————————————
