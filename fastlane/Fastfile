@@ -18,7 +18,7 @@ private_lane :build do |options|
   badge(shield: options[:shield],
         no_badge: true,
         shield_gravity: "Center",
-        path: "./ZNotification/Assets.xcassets"
+        path: "./ZNotification/Images.xcassets"
         )
   update_info_plist(scheme:”ZNotification”,
                     display_name: options[:appname]
